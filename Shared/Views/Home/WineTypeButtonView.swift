@@ -7,56 +7,38 @@
 
 import SwiftUI
 
+// faire appel reseau avec combine
+
 
 struct WineTypeButtonView: View {
     @State private var modalB = false
     
     var body: some View {
         
-        HStack(spacing: 20) {
-            VStack {
-                Button(action: { modalB.toggle() } ) {
-                    Image("red_wine")
-                        .resizable()
-                        .frame(width: 70, height: 70)
-                        .cornerRadius(9)
-                        .shadow(radius: 10)
-                }
-                Text("Red")
-            }
-            VStack {
-                Button(action: { modalB.toggle() } ) {
-                    Image("whiteWine")
-                        .resizable()
-                        .frame(width: 70, height: 70)
-                        .cornerRadius(9)
-                        .shadow(radius: 10)
-                }
-                Text("White")
-            }
-            VStack {
-                Button(action: { modalB.toggle() } ) {
-                    Image("rosé")
-                        .resizable()
-                        .frame(width: 70, height: 70)
-                        .cornerRadius(9)
-                        .shadow(radius: 10)
-                }
-                Text("Rosé")
-            }
-            VStack {
-                Button(action: { modalB.toggle() } ) {
-                    Image("champagne")
-                        .resizable()
-                        .frame(width: 70, height: 70)
-                        .cornerRadius(9)
-                        .shadow(radius: 10)
-                }
-                Text("Champagne")
-            }
+        HStack{
+            getButton(image: "red_wine", name: "Rouge")
+            getButton(image: "whiteWine", name: "Blanc")
+            getButton(image: "rosé", name: "Rosé")
+            getButton(image: "champagne", name: "Champagne")
         }
+       // .padding(.horizontal,)
+    }
+    
+    func getButton(image: String, name: String ) -> some View {
+        VStack {
+            Button(action: { modalB.toggle() } ) {
+                Image(image)
+                    .resizable()
+                    .frame(width: 70, height: 70)
+                    .cornerRadius(9)
+                    .shadow(radius: 10)
+            }
+            Text(name)
+        }
+       .padding(.horizontal, 5)
     }
 }
+
 
 struct wineTypeButton_Previews: PreviewProvider {
     static var previews: some View {

@@ -10,7 +10,8 @@ import SwiftUI
 struct HomeView: View {
     
     @EnvironmentObject var modelData: ModelData
-    @State private var receipeName = ""
+    @EnvironmentObject var viewModel: WineViewModel
+    @State private var receipeName: String = ""
     @State private var modalIsPresented = false
     
     
@@ -42,8 +43,9 @@ struct HomeView: View {
                         .cornerRadius(16)
                         .shadow(radius: 10)
                     
-                    Button(action: { modalIsPresented = true
-                      print("kdkdk")
+                    Button(action: {
+                        viewModel.getMonbousain(receipeName)
+                        modalIsPresented = true
                     } )  {
                         
                         Image(systemName: "magnifyingglass")
@@ -54,6 +56,8 @@ struct HomeView: View {
                     .padding(.horizontal,11)
                     .sheet(isPresented: $modalIsPresented) {
                         WineResultList(modelData: _modelData)
+                        
+                        
                     }
                 }
                 .padding(.horizontal, 11)
@@ -71,7 +75,7 @@ struct HomeView: View {
                         .padding()
                         .font(Font.title2.bold())
                        .padding()
-                        ExploreView(items: modelData.wine).environmentObject(modelData)
+                       ExploreView(items: modelData.wine)
                             .padding()
                     }
             }

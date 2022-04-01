@@ -9,30 +9,27 @@ import SwiftUI
 struct WineResultList: View {
     @EnvironmentObject var modelData: ModelData
     @State private var showFavoritesOnly = false
-   // @Binding var showModal: Bool
-
+    // @Binding var showModal: Bool
+    @EnvironmentObject var wineViewModel: WineViewModel
+    
     var filteredWine: [Wine] {
         modelData.wine.filter { wine in
             (!showFavoritesOnly || wine.isFavorite)
         }
     }
-
+    
     var body: some View {
         NavigationView {
-            List {
-//                Toggle(isOn: $showFavoritesOnly) {
-//                    Text("Favorites only")
-//                }
-
-                ForEach(filteredWine) { wine in
-                    NavigationLink {
-                      //  WineDetail(Wine: wine)
-                    } label: {
-                        WineResultRow(wine: wine)
+            ScrollView {
+                VStack {
+                    Text("wineResult")
+                    ForEach(wineViewModel.products, id: \.id) { productMatch in
+                        WineResultRow(product: productMatch)
                     }
                 }
+                .padding(.horizontal, 10)
+                .navigationTitle("Best Results")
             }
-            .navigationTitle("Best Results")
         }
     }
 }

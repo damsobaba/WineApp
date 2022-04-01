@@ -10,9 +10,12 @@ import SwiftUI
 @main
 struct MyVinApp: App {
     @StateObject private var modelData = ModelData()
+    @StateObject private var wineViewModel = WineViewModel()
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(modelData)
+            ContentView()
+                .environmentObject(modelData)
+                .environmentObject(wineViewModel)
         }
     }
 }

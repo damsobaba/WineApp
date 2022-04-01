@@ -35,6 +35,10 @@
 		CE9073C127F2FF260089F846 /* WineResultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9073BF27F2FF260089F846 /* WineResultRow.swift */; };
 		CE9073C327F304500089F846 /* FavoriteVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9073C227F304500089F846 /* FavoriteVIew.swift */; };
 		CE9073C427F304500089F846 /* FavoriteVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9073C227F304500089F846 /* FavoriteVIew.swift */; };
+		CE9073C727F36F400089F846 /* WineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9073C627F36F400089F846 /* WineData.swift */; };
+		CE9073C827F36F400089F846 /* WineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9073C627F36F400089F846 /* WineData.swift */; };
+		CE9073CA27F36F940089F846 /* WineDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9073C927F36F940089F846 /* WineDataService.swift */; };
+		CE9073CB27F36F940089F846 /* WineDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9073C927F36F940089F846 /* WineDataService.swift */; };
 		CEAF943627EDBDE200878D4E /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF943527EDBDE200878D4E /* Tests_iOS.swift */; };
 		CEAF943827EDBDE200878D4E /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF943727EDBDE200878D4E /* Tests_iOSLaunchTests.swift */; };
 		CEAF944227EDBDE200878D4E /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF944127EDBDE200878D4E /* Tests_macOS.swift */; };
@@ -79,6 +83,8 @@
 		CE9073BA27F20DED0089F846 /* WineResultList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineResultList.swift; sourceTree = "<group>"; };
 		CE9073BF27F2FF260089F846 /* WineResultRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineResultRow.swift; sourceTree = "<group>"; };
 		CE9073C227F304500089F846 /* FavoriteVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteVIew.swift; sourceTree = "<group>"; };
+		CE9073C627F36F400089F846 /* WineData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineData.swift; sourceTree = "<group>"; };
+		CE9073C927F36F940089F846 /* WineDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineDataService.swift; sourceTree = "<group>"; };
 		CEAF941D27EDBDE100878D4E /* MyVinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVinApp.swift; sourceTree = "<group>"; };
 		CEAF941E27EDBDE100878D4E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CEAF941F27EDBDE200878D4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -130,6 +136,8 @@
 			children = (
 				CE90739527F1B1260089F846 /* Wine.swift */,
 				CE90739827F1B19C0089F846 /* ModelData.swift */,
+				CE9073C627F36F400089F846 /* WineData.swift */,
+				CE9073C927F36F940089F846 /* WineDataService.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -163,13 +171,13 @@
 			path = Explore;
 			sourceTree = "<group>";
 		};
-		CE9073BD27F2FCA10089F846 /* wineResult */ = {
+		CE9073BD27F2FCA10089F846 /* WineResult */ = {
 			isa = PBXGroup;
 			children = (
 				CE9073BA27F20DED0089F846 /* WineResultList.swift */,
 				CE9073BF27F2FF260089F846 /* WineResultRow.swift */,
 			);
-			path = wineResult;
+			path = WineResult;
 			sourceTree = "<group>";
 		};
 		CE9073BE27F2FE1F0089F846 /* Home */ = {
@@ -180,7 +188,6 @@
 				CE9073B727F1FA090089F846 /* WineTypeButtonView.swift */,
 				CE9073A927F1D3670089F846 /* TabBar */,
 				CE9073B627F1F9D50089F846 /* Explore */,
-				CE9073BD27F2FCA10089F846 /* wineResult */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -208,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				CEAF941D27EDBDE100878D4E /* MyVinApp.swift */,
+				CE9073BD27F2FCA10089F846 /* WineResult */,
 				CE90739C27F1B1D30089F846 /* Views */,
 				CE90739B27F1B1C50089F846 /* Model */,
 				CEAF941F27EDBDE200878D4E /* Assets.xcassets */,
@@ -419,10 +427,12 @@
 				CEAF944727EDBDE200878D4E /* HomeView.swift in Sources */,
 				CEAF944527EDBDE200878D4E /* MyVinApp.swift in Sources */,
 				CE9073A427F1C1D10089F846 /* ContentView.swift in Sources */,
+				CE9073C727F36F400089F846 /* WineData.swift in Sources */,
 				CE90739027F1AE920089F846 /* ExploreView.swift in Sources */,
 				CE9073C327F304500089F846 /* FavoriteVIew.swift in Sources */,
 				CE9073BB27F20DED0089F846 /* WineResultList.swift in Sources */,
 				CE9073AE27F1D6AF0089F846 /* TabItemData.swift in Sources */,
+				CE9073CA27F36F940089F846 /* WineDataService.swift in Sources */,
 				CE9073AB27F1D38B0089F846 /* TabBottomView.swift in Sources */,
 				CE9073B827F1FA090089F846 /* WineTypeButtonView.swift in Sources */,
 				CE90739627F1B1260089F846 /* Wine.swift in Sources */,
@@ -441,10 +451,12 @@
 				CEAF944827EDBDE200878D4E /* HomeView.swift in Sources */,
 				CEAF944627EDBDE200878D4E /* MyVinApp.swift in Sources */,
 				CE9073A527F1C1D10089F846 /* ContentView.swift in Sources */,
+				CE9073C827F36F400089F846 /* WineData.swift in Sources */,
 				CE90739127F1AE920089F846 /* ExploreView.swift in Sources */,
 				CE9073C427F304500089F846 /* FavoriteVIew.swift in Sources */,
 				CE9073BC27F20DED0089F846 /* WineResultList.swift in Sources */,
 				CE9073AF27F1D6AF0089F846 /* TabItemData.swift in Sources */,
+				CE9073CB27F36F940089F846 /* WineDataService.swift in Sources */,
 				CE9073AC27F1D38B0089F846 /* TabBottomView.swift in Sources */,
 				CE9073B927F1FA090089F846 /* WineTypeButtonView.swift in Sources */,
 				CE90739727F1B1260089F846 /* Wine.swift in Sources */,
